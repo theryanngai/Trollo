@@ -1,0 +1,31 @@
+body {
+	background: turquoise;
+	margin: 10px;
+}
+
+ul {
+	list-style-type: none;
+	padding-left: 0px;
+	margin-left: 0px;
+}
+
+div .list {
+	background: lightgray;
+	padding: 10px;
+	float:left;
+	margin: 10px;
+	width: 200px;
+	border-radius: 3px;
+}
+
+li.card:hover .delete_card { display: block; }
+
+.delete_card {
+	display: none;
+}
+
+span {
+	font-weight: bold;
+	font-size: 18px;
+}
+
