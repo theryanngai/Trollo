@@ -19,16 +19,15 @@ TrelloClone.Views.NewCard = Backbone.View.extend({
 
 	addCard: function(event) {
 		event.preventDefault();
-		var newTitle = $(event.target).serializeJSON().card.title;
-		var newDescription = $(event.target).serializeJSON().card.description;
-		var model = new TrelloClone.Models.Card({ title: newTitle, 
-																							description: newDescription,
-																						  list_id: this.listId });
+		debugger;
+		var attrs = $(event.target).serializeJSON().card;
+		var model = new TrelloClone.Models.Card(attrs);;
 		var that = this;
 		model.save({}, 
-			{success: function(model){
-				TrelloClone.Collections.boards.fetch();
-				Backbone.history.navigate("/boards/" + that.boardId, {trigger: true});
+			{
+				success: function(model){
+					TrelloClone.Collections.boards.fetch();
+					Backbone.history.navigate("/boards/" + that.boardId, {trigger: true});
 			}
 		})
 	}

@@ -1,4 +1,4 @@
-TrelloClone.Views.BoardsIndexItem = Backbone.View.extend({
+TrelloClone.Views.BoardsIndexItem = Backbone.CompositeView.extend({
 	tagName: "li",
 	events: {'click .delete-board': 'deleteBoard'},
 

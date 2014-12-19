@@ -4,7 +4,7 @@ json.lists do
 	json.array!(@board.lists) do |list|
 		json.(list, :id, :title, :ord)
 		json.cards list.cards do |card|
-			json.(card, :id, :title, :description)
+			json.(card, :id, :description)
 		end
 	end
 end
