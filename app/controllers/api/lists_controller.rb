@@ -28,6 +28,16 @@ module Api
       end
     end
 
+    def show
+      @list = List.find(params[:id])
+
+      if @list
+        render :show
+      else
+        render json: @list.errors.full_messages, status: 403
+      end
+    end
+
     private
 
     def current_board
@@ -40,7 +50,7 @@ module Api
     end
 
     def list_params
-      params.require(:list).permit(:title, :board_id, :ord)
+      params.require(:list).permit(:id, :title, :board_id, :ord)
     end
   end
 end

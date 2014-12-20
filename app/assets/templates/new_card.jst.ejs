@@ -3,7 +3,8 @@
 <br><br>
 <form class="new_card">
 	<label for="card_description">Description</label>
-		<input type=text id="card_description" name="card[description]">
+		<input type="text" id="card_description" name="card[description]">
 	<br><br>
+	<input type="hidden" name="card[list_id]" value="<%= listId %>">
 	<input type="submit" value="Submit">
 </form>

@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'backbone-on-rails'
+gem 'byebug'
 gem 'bcrypt'
 gem 'bootstrap-sass'
 gem 'coffee-rails', '~> 4.0.0'

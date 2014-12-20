@@ -4,7 +4,7 @@ TrelloClone.Routers.Router = Backbone.Router.extend ({
 		"boards/new": "newBoard",
 		"boards/:id": "showBoard",
 		"boards/:id/lists/new": "newList",
-		"boards/:id/lists/:id/cards/new": "newCard"
+		"boards/:id/lists/:id/cards/new": "newCard",
 	},
 
 	initialize: function(options) {
