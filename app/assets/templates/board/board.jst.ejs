@@ -1,28 +1,9 @@
 <h1><%= board.escape('title') %></h1>
 
-	<ul class="clearfix">
-		<% board.lists().models.forEach(function(list){ %>
-		<div class="list">
-			<li>
-				<span id="list_title"><%= list.escape('title') %></span>
-				<ul>
-					<% list.cards().models.forEach(function(card) { %>
-						<li class="card">
-							<b><%= card.escape('title') %></b><br>
-							<i><%= card.escape('description') %></i>
-							<button class="delete_card" data-id=<%= card.get('id') %>>Delete</button><br>
-						</li>
-					<% }) %>
-				</ul>
-				<br><br>
-				<a href="#/boards/<%= board.get('id') %>/lists/<%= list.get('id') %>/cards/new"
-					class="new_card">
-					New Card
-				</a>
-			</li>
-		</div>
-		<% }) %>
-	</ul>
+<ul class="clearfix">
+	<div class="list-container">
+	</div>
+</ul>
 
 
 <div class="reference">

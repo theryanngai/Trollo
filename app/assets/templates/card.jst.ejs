@@ -1,0 +1,5 @@
+<li class="card">
+	<b><%= card.escape('title') %></b><br>
+	<i><%= card.escape('description') %></i>
+	<button class="delete_card" data-id=<%= card.get('id') %>>Delete</button><br>
+</li>

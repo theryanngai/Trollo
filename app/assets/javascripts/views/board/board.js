@@ -10,12 +10,20 @@ TrelloClone.Views.ShowBoard = Backbone.CompositeView.extend({
 
 	template: JST['board/board'],
 
+	addLists: function() {
+		var that = this;
+
+		this.model.lists().each(function(list) {
+			var listView = new TrelloClone.Views.ShowList ({ model: list, board: that.model });
+			that.addSubview('.list-container', listView);
+		})
+	},
+
 	render: function() {
 		var content = this.template({ board: this.model });
 		this.$el.html(content);
-		$('.list').draggable({
-			snap: '.list'
-		});
+		this.attachSubviews();
+		$('.list-draggable').sortable();
 		return this;
 	},
 
